@@ -67,4 +67,29 @@ public class QueueDS<E> {
 		}
 		return found;
 	}
+	
+	public E elementAt(int pos) {
+		E elem = null;
+		int currIdx=1;
+		if (front != -1 && end != -1) {
+			for (int i = front; i <= end; i++) {
+				if (currIdx == pos) {
+					elem = data[i];
+					break;
+				}else {
+					currIdx++;
+				}
+			}
+		}
+		return elem;
+	}
+
+	public E first() {
+		return elementAt(1);
+	}	
+
+	public E last() {
+		return elementAt(size());
+	}	
+
 }

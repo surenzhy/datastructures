@@ -153,4 +153,62 @@ public class QueueTest {
 		Assert.assertEquals(false, s.contains("1"));
 	}
 
+	@Test
+	public void when_push_elements_and_check_element_at_first_pos() {
+		QueueDS<String> s = new QueueDS<String>();
+		s.enQueue("1");
+		s.enQueue("2");
+		s.enQueue("3");
+		s.enQueue("4");
+		s.enQueue("5");
+		Assert.assertEquals("1", s.elementAt(1));
+	}
+
+	@Test
+	public void when_push_elements_and_check_element_at_first_pos1() {
+		QueueDS<String> s = new QueueDS<String>();
+		s.enQueue("1");
+		s.enQueue("2");
+		s.enQueue("3");
+		s.enQueue("4");
+		s.enQueue("5");
+		Assert.assertEquals("1", s.first());
+	}
+
+
+	@Test
+	public void when_push_elements_and_check_element_at_invalid_pos() {
+		QueueDS<String> s = new QueueDS<String>();
+		s.enQueue("1");
+		s.enQueue("2");
+		s.enQueue("3");
+		s.enQueue("4");
+		s.enQueue("5");
+		Assert.assertNull(s.elementAt(8));
+	}
+
+	@Test
+	public void when_push_elements_and_check_element_at_last_pos() {
+		QueueDS<String> s = new QueueDS<String>();
+		s.enQueue("1");
+		s.enQueue("2");
+		s.enQueue("3");
+		s.enQueue("4");
+		s.enQueue("5");
+		Assert.assertEquals("5", s.elementAt(s.size()));
+	}
+
+	@Test
+	public void when_push_elements_and_check_element_at_last_pos1() {
+		QueueDS<String> s = new QueueDS<String>();
+		s.enQueue("1");
+		s.enQueue("2");
+		s.enQueue("3");
+		s.enQueue("4");
+		s.enQueue("5");
+		Assert.assertEquals("5", s.last());
+	}
+	
+
+	
 }
